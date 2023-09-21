@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PlayList</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+                <div class="title-container">
+                    <a href="{% url 'core:home'%}"><h1 class="title roboto-900">Django Playlist</h1></a>
+                    <a href="{% url 'core:insert'%}" class="insert-music roboto-900">Adicionar música</a>
+                </div>
+        </header>
+        <main class="flex">
+        {% for object in object_list %}
+        {% if object %}
+            <div class="card-container">
+                <div class="card">
+                    <figure class="image-container">
+                        <img src="{{object.image.url}}" alt="Card Image">
+                    </figure>
+                    <div class="card-info">
+                        <h2 class="roboto-900 card-title">{{object.title}}</h1>
+                    </div>
+                    <div class="card-audio-player">
+                        <audio controls class="audio-player">
+                            <source src="{{object.music.url}}"  type="audio/mp3">
+                        </audio> 
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+        </main>
+        <footer>
+            <ul class="pages">
+                {% for page in paginator.page_range %}
+                <li class="page"><a href="?page={{page}}">{{page}}</a></li>    
+                {% endfor %} 
+            </ul>
+        </footer>
+        <script src="{% static 'js/main.js' %}" async defer></script>
+    </body>
+</html>

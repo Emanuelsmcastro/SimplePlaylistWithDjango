@@ -1,0 +1,46 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PlayList</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+                <div class="title-container">
+                    <a href="{% url 'core:home'%}"><h1 class="title roboto-900">Django Playlist</h1></a>
+                </div>
+        </header>
+        <main class="grid">
+            <div class="form-container">
+                <form method="POST" class="insert-form" enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    {% for error in form.errors %}
+                    {{error}}
+                    {% endfor %}
+                    {% for field in form %}
+                        <div class="form-field">
+                            {% if field.auto_id == 'id_title' %}
+                                {% render_field field class="input-form" %}
+                                <label class="input-label roboto-900" for="{{field.auto_id}}">{{field.name}}</label>
+                            {% else %}
+                                {% render_field field %}
+                                <label class="roboto-900" for="{{field.auto_id}}">{{field.name}}</label>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <input type="submit" value="Salvar">
+                </form>
+            </div>
+        </main>
+        <script src="{% static 'js/main.js' %}" async defer></script>
+    </body>
+</html>

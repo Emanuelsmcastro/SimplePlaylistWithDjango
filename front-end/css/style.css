@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+body{
+    background: url("../image/main-background.jpg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+header{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 10px;
+}
+
+.title-container{
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.roboto-900{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.title{
+    padding: 5px 20px;
+    font-weight: bold;
+    color: #454545;
+    cursor: default;
+}
+
+.image-container{
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+}
+
+.card{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    height: 400px;
+    background-color: #2c2c2c2c;
+    border-radius: 10px;
+}
+
+.card-info{
+    place-self: center;
+    grid-row: 2/3;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.card-audio-player{
+    grid-row: 4/5;
+    place-self: center;
+    width: 97%;
+}
+
+.audio-player{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.card-container{
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-height: 900px;
+    overflow-y: scroll;
+}
