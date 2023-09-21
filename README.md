@@ -8,3 +8,7 @@
 
 # RUN
 ![image](https://github.com/Emanuelsmcastro/simple_music_playlist_django/assets/93106680/e12010a8-19ed-4c95-9767-1a0e68c97173)
+
+
+# OBS
+- Projeto em andamento, aguardando validação de upload de arquivos .mp3 e utilização do gunicorn e nginx para a criação de um container docker para rodar a aplicação
