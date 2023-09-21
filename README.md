@@ -11,4 +11,4 @@
 
 
 # OBS
-- Projeto em andamento, aguardando validação de upload de arquivos .mp3 e utilização do gunicorn e nginx para a criação de um container docker para rodar a aplicação
+- Projeto em andamento, aguardando validação de upload de arquivos .mp3 e utilização do gunicorn e nginx para a criação de um container docker.
