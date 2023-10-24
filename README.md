@@ -1,4 +1,4 @@
-# simple_music_playlist_django
+# Simpe Music Playlist Django
 ![image](https://github.com/Emanuelsmcastro/simple_music_playlist_django/assets/93106680/73048f1e-ca97-4f6d-a4be-7f2ea5b7505b)
 
 # LIB's
